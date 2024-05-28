@@ -52,6 +52,7 @@
 //=========== Tuple in TS ========
 // const arr:[number,number,number]= [12,3,43]; //when array is given fixed sized then it is called tuple
 
+
 //========== Object in TS ==========
 // const obj:{
 //       height:number,
@@ -121,4 +122,85 @@
 // }
 
 // kendal.func(20,40);
+
+//============ Functions in TS ===============
+// //*****Optional Parameter*******
+// type FuncType = (n:number, m:number, l?:number) => number | string;
+// const func: FuncType = (a,b,l) =>{
+//     if(typeof l === "undefined") return "L was not Provided";
+//     return a*b*l;
+// };
+// func(25,23);
+
+//*******Default Parameter********
+// type FuncType = (n:number, m:number, l?:number) => number | string;
+// const func: FuncType = (a,b,l=20) =>{
+//      return a*b*l;
+// };
+
+// func(25,23);
+
+// const func = (n : number, m : number, l : number = 20) : number => {
+//     return n*m*l;
+// }
+
+// func(25, 23);
+
+//*****Rest Operator******/
+// type FuncType = (...m:number[]) => number[];
+// const func:FuncType  = (...m) =>{
+    
+//    return m;
+// } 
+// func(25,23,53,646,353,23);
+
+//========== Function with Object ===============
+// function lol(n:number):number{
+//   return n;
+// }
+
+// type FuncType = (n:number) => number;
+// const lol:FuncType = function lol(n){
+//     return n;
+// }
+
+//****** 1 method *******/
+// const getData = (product:{name:string, stock:number, price:number, photo:string}) : void => {
+//   console.log(product);
+// }
+
+//****** 2 Method *********/
+// interface Product {
+//     name: string,
+//     stock: number,
+//     price: number,
+//     photo: string,
+//    readonly id: string,
+// }
+
+// type GetDataType  = (product: {
+//     name: string;
+//     stock: number;
+//     price: number;
+//     photo: string;
+//     id: string;
+    
+// }) => void;
+
+// const getData : GetDataType= (product: Product) => {
+//     console.log(product);
+    
+// }
+
+// const productOne: Product = {
+//     name: "Macbook",
+//     stock: 45,
+//     price: 9999999,
+//     photo: "samplephotoUrl",
+//     id:"abc"
+// }
+
+// getData(productOne);
+
+
 
